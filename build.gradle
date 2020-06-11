@@ -6,19 +6,15 @@ plugins {
 version '1.0-SNAPSHOT'
 
 repositories {
-    // Temporary until BLS is updated:
-    flatDir {
-        dirs './lib'
-    }
     mavenCentral()
     maven { url "https://consensys.bintray.com/pegasys-repo/" }
 }
 
 dependencies {
-    implementation 'tech.pegasys.teku:bls:0.12.0-SNAPSHOT'
     implementation 'org.apache.tuweni:tuweni-bytes:1.0.0'
-    implementation 'tech.pegasys.teku.internal:ssz:0.11.4-SNAPSHOT'
     implementation 'org.miracl.milagro.amcl:milagro-crypto-java:0.4.0'
+    implementation 'tech.pegasys.teku.internal:bls:0.12.0-SNAPSHOT'
+    implementation 'tech.pegasys.teku.internal:ssz:0.11.4-SNAPSHOT'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
